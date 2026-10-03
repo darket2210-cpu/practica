@@ -1,6 +1,6 @@
 # Agenda de actividades
 
-Proyecto web sencillo para practicar el trabajo colaborativo con Git y GitHub.
+Proyecto web adaptable para registrar y organizar actividades mientras se practica Git en equipo.
 
 ## Uso
 
