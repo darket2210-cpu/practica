@@ -58,9 +58,19 @@ form.addEventListener('submit', (event) => {
     dateInput.focus();
     return;
   }
+  if (title.length < 3) {
+    message.textContent = 'Escribe al menos 3 caracteres para la actividad.';
+    form.elements.title.focus();
+    return;
+  }
+  if (activities.some((entry) => entry.title.toLocaleLowerCase('es') === title.toLocaleLowerCase('es') && entry.date === date)) {
+    message.textContent = 'Esta actividad ya existe en esa fecha.';
+    form.elements.title.focus();
+    return;
+  }
   activities.push({ id: crypto.randomUUID(), title, date });
   localStorage.setItem(storageKey, JSON.stringify(activities));
-  message.textContent = '';
+  message.textContent = 'Actividad agregada correctamente.';
   form.reset();
   render();
 });
