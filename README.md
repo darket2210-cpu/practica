@@ -6,6 +6,8 @@ Proyecto web sencillo para practicar el trabajo colaborativo con Git y GitHub.
 
 Abre `index.html` en un navegador. Agrega una actividad y una fecha. Los datos se guardan en el almacenamiento local del navegador.
 
+El formulario requiere un título de al menos tres caracteres y una fecha actual o futura. No permite registrar dos veces el mismo título en la misma fecha.
+
 ## Estructura
 
 - `index.html`: formulario y lista de actividades.
