@@ -1,6 +1,6 @@
 # Agenda de actividades
 
-Proyecto web adaptable para organizar actividades y practicar Git.
+Proyecto web adaptable para registrar y organizar actividades mientras se practica Git en equipo.
 
 ## Uso
 
