@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agenda de actividades</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <p class="eyebrow">Proyecto de práctica Git</p>
+      <h1>Agenda de actividades</h1>
+      <p>Organiza tus pendientes en una lista sencilla que se guarda en este navegador.</p>
+    </header>
+    <section class="panel" aria-labelledby="form-title">
+      <h2 id="form-title">Nueva actividad</h2>
+      <form id="activity-form">
+        <label for="activity-title">Actividad</label>
+        <input id="activity-title" name="title" type="text" required maxlength="80" placeholder="Ejemplo: revisar el Pull Request">
+        <label for="activity-date">Fecha</label>
+        <input id="activity-date" name="date" type="date" required>
+        <button type="submit">Agregar actividad</button>
+      </form>
+      <p id="form-message" role="status" aria-live="polite"></p>
+    </section>
+    <section class="panel" aria-labelledby="list-title">
+      <h2 id="list-title">Mis actividades</h2>
+      <ul id="activity-list"></ul>
+      <p id="empty-state">Todavía no hay actividades.</p>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
