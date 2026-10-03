@@ -3,6 +3,15 @@ const list = document.querySelector('#activity-list');
 const emptyState = document.querySelector('#empty-state');
 const message = document.querySelector('#form-message');
 const storageKey = 'practica-activities';
+const dateInput = document.querySelector('#activity-date');
+
+function todayLocal() {
+  const now = new Date();
+  const offset = now.getTimezoneOffset() * 60_000;
+  return new Date(now.getTime() - offset).toISOString().slice(0, 10);
+}
+
+dateInput.min = todayLocal();
 
 function loadActivities() {
   try {
@@ -42,6 +51,11 @@ form.addEventListener('submit', (event) => {
   const date = form.elements.date.value;
   if (!title || !date) {
     message.textContent = 'Completa la actividad y la fecha.';
+    return;
+  }
+  if (date < todayLocal()) {
+    message.textContent = 'Selecciona una fecha de hoy en adelante.';
+    dateInput.focus();
     return;
   }
   activities.push({ id: crypto.randomUUID(), title, date });
